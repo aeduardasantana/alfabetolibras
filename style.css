@@ -365,3 +365,21 @@ h3 { letter-spacing: -.04em; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
 }
+
+/* Fonte do alfabeto manual utilizada pelo produto de datilologia. */
+@font-face {
+  font-family: "Libras2020";
+  src: url("https://raw.githubusercontent.com/aeduardasantana/datilologia/main/Libras2020-Regular.ttf") format("truetype");
+  font-display: swap;
+}
+.manual-caption { margin: 22px 0 0; color: #555; font-size: .85rem; line-height: 1.5; }
+.practice-output { min-height: 165px; padding-top: 16px; }
+.practice-letter { width: 77px; height: 94px; display: inline-flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; }
+.practice-letter .manual-glyph { font-family: "Libras2020", sans-serif; font-size: 3.15rem; line-height: 1; font-weight: normal; }
+.practice-letter .manual-label { font: 600 .68rem 'DM Mono', monospace; line-height: 1; }
+.practice-space { height: 94px; }
+.footer-official { background: #151515; color: #f5f5f2; border-top: 1px solid #3b3b3b; }
+.footer-official-inner { padding: 37px 0 44px; font: 400 .8rem Manrope, Arial, sans-serif; }
+.footer-official-inner p { margin: 0 0 9px; line-height: 1.7; }
+.footer-official-inner .footer-reference { max-width: 800px; margin-top: 20px; color: #c9c9c9; font-size: .78rem; }
+@media (max-width: 720px) { .practice-letter { width: 68px; height: 87px; } .practice-letter .manual-glyph { font-size: 2.7rem; } }
