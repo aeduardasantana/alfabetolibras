@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const practiceOutput = document.getElementById('practice-output');
   const clearPractice = document.getElementById('clear-practice');
 
-  let selectedLetter = 'A';
+  let selectedLetter = null;
 
   function guidanceFor(letter) {
     if (letter === 'J' || letter === 'Z') {
@@ -38,12 +38,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const videoId = videos[letter];
     const playbackParams = `&autoplay=${autoplay ? 1 : 0}&mute=1&loop=1&playlist=${videoId}`;
 
+    iframe.hidden = false;
     iframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?rel=0&playsinline=1${playbackParams}`;
     iframe.title = `Vídeo da letra ${letter} no alfabeto manual em Libras`;
     placeholder.hidden = true;
     placeholder.style.display = 'none';
     currentLetter.textContent = `Letra ${letter}`;
     guidance.textContent = guidanceFor(letter);
+    prevButton.disabled = false;
+    nextButton.disabled = false;
 
     document.querySelectorAll('.letter-button').forEach((button) => {
       const isActive = button.dataset.letter === letter;
@@ -143,5 +146,7 @@ document.addEventListener('DOMContentLoaded', () => {
     practiceInput.focus();
   });
 
-  selectLetter('A', { autoplay: false });
+  iframe.hidden = true;
+  prevButton.disabled = true;
+  nextButton.disabled = true;
 });
