@@ -1,42 +1,135 @@
-<html lang="pt-br">
+<!doctype html>
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dicionário de Libras - Alfabeto</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Explore o alfabeto manual em Libras com vídeos individuais das letras A a Z e uma área de prática de datilologia." />
+  <meta name="theme-color" content="#090909" />
+  <meta property="og:title" content="Alfabeto manual em Libras" />
+  <meta property="og:description" content="Um recurso visual para conhecer e praticar as letras do alfabeto manual em Libras." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+  <title>Alfabeto manual em Libras | Compass Rose Systems</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <div class="container">
-        <h1>Alfabeto em LIBRAS - Língua Brasileira de Sinais</h1>
-        <p>Clique em uma letra para ver o sinal correspondente:</p>
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
 
-        <div id="alphabet-grid" class="alphabet-grid">
-            <!-- Letras serão inseridas aqui pelo JavaScript -->
+  <header class="site-header wrap">
+    <a class="brand" href="#inicio" aria-label="Alfabeto Libras — início">
+      <span class="brand-mark" aria-hidden="true">✦</span>
+      <span><strong>Alfabeto Libras</strong><small>recurso visual de aprendizagem</small></span>
+    </a>
+    <nav class="site-nav" aria-label="Navegação principal">
+      <a href="#alfabeto">Alfabeto</a>
+      <a href="#pratica">Praticar</a>
+      <a href="#sobre">Como usar</a>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+    <section id="inicio" class="hero wrap">
+      <div class="eyebrow"><span></span> Recurso educacional · Libras</div>
+      <h1>Alfabeto manual<br /><em>em Libras.</em></h1>
+      <p class="lead">Conheça as letras de A a Z em vídeos curtos, avance no seu ritmo e use a área de prática para treinar sequências de letras, nomes e palavras.</p>
+      <div class="hero-meta" aria-label="Recursos disponíveis">
+        <span>26 letras</span>
+        <span>Vídeos individuais</span>
+        <span>Prática guiada</span>
+      </div>
+      <a class="button primary" href="#alfabeto">Começar pelo alfabeto <span aria-hidden="true">↓</span></a>
+      <div class="compass-mark" aria-hidden="true">✦</div>
+    </section>
+
+    <section id="alfabeto" class="learning-section">
+      <div class="wrap">
+        <div class="section-heading">
+          <div class="eyebrow light"><span></span> Explore letra por letra</div>
+          <h2>Escolha uma letra.<br />Observe. Repita.</h2>
+          <p>Selecione uma letra para abrir o vídeo correspondente. Você também pode usar os controles anterior e próxima.</p>
         </div>
 
-        <div id="video-container" class="video-container">
-            <iframe id="libras-video"
-                    width="560"
-                    height="315"
-                    src=""
-                    title="Vídeo de Libras"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin"
-                    allowfullscreen>
+        <div id="alphabet-grid" class="alphabet-grid" aria-label="Letras do alfabeto manual"></div>
+
+        <div class="player-card">
+          <div class="player-heading">
+            <div>
+              <span class="player-label">Agora</span>
+              <h3 id="current-letter">Letra A</h3>
+            </div>
+            <p id="letter-guidance" class="letter-guidance" aria-live="polite">Observe a configuração de mão e repita com calma.</p>
+          </div>
+
+          <div class="video-container">
+            <iframe
+              id="libras-video"
+              src=""
+              title="Vídeo da letra A no alfabeto manual em Libras"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen>
             </iframe>
-            <p id="video-placeholder">Selecione uma letra acima.</p>
+            <div id="video-placeholder" class="video-placeholder">
+              <span aria-hidden="true">▶</span>
+              <p>Selecione uma letra para assistir.</p>
+            </div>
+          </div>
+
+          <div class="player-actions">
+            <button id="prev-letter" class="button secondary" type="button">← Anterior</button>
+            <button id="random-letter" class="button ghost" type="button">Letra aleatória</button>
+            <button id="next-letter" class="button secondary" type="button">Próxima →</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pratica" class="practice-section wrap">
+      <div class="practice-grid">
+        <div>
+          <div class="eyebrow"><span></span> Prática de datilologia</div>
+          <h2>Monte uma sequência<br />e pratique letra por letra.</h2>
+          <p class="lead">Digite um nome ou uma palavra. A sequência será organizada em letras clicáveis para você revisar os vídeos na ordem que desejar.</p>
         </div>
 
-    </div>
+        <div class="practice-panel">
+          <label for="practice-input">Texto para praticar</label>
+          <div class="input-row">
+            <input id="practice-input" type="text" maxlength="40" autocomplete="off" placeholder="Ex.: EDUARDA" />
+            <button id="clear-practice" type="button" aria-label="Limpar texto">Limpar</button>
+          </div>
+          <div id="practice-output" class="practice-output" aria-live="polite">
+            <p class="empty-state">As letras aparecerão aqui.</p>
+          </div>
+          <p class="practice-note">Nesta versão, a prática usa A–Z. Acentos e cedilha são simplificados para a letra-base. O recurso treina o alfabeto manual; não converte português em Libras.</p>
+        </div>
+      </div>
+    </section>
 
-    <footer>
-        <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="630716070c1410020d17020d0223040e020a0f4d000c0e">[email&#160;protected]</a>
-    </footer>
+    <section id="sobre" class="about-section">
+      <div class="wrap">
+        <div class="section-heading compact">
+          <div class="eyebrow light"><span></span> Antes de continuar</div>
+          <h2>Alfabeto manual é recurso.<br />Libras é língua.</h2>
+        </div>
+        <div class="info-cards">
+          <article><span>01</span><h3>Não é um dicionário</h3><p>O alfabeto manual representa letras. A maior parte da comunicação em Libras acontece por sinais, e não pela soletração de todas as palavras.</p></article>
+          <article><span>02</span><h3>Use em contextos adequados</h3><p>A datilologia é especialmente útil para nomes próprios, siglas, marcas, termos técnicos e palavras cujo sinal ainda não seja conhecido.</p></article>
+          <article><span>03</span><h3>Aprenda visualmente</h3><p>Observe configuração, orientação e, quando houver, movimento. Nas letras J e Z, o movimento faz parte da realização e merece atenção especial.</p></article>
+        </div>
+      </div>
+    </section>
+  </main>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="script.js"></script>
+  <footer class="footer wrap">
+    <span>© 2026 GEB Tecnologia</span>
+    <span>Desenvolvimento tecnológico: Compass Rose Systems.</span>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
