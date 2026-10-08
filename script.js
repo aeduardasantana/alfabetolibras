@@ -36,9 +36,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     selectedLetter = letter;
     const videoId = videos[letter];
-    const autoplayParam = autoplay ? '&autoplay=1&mute=1' : '';
+    const playbackParams = `&autoplay=${autoplay ? 1 : 0}&mute=1&loop=1&playlist=${videoId}`;
 
-    iframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?rel=0&playsinline=1${autoplayParam}`;
+    iframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?rel=0&playsinline=1${playbackParams}`;
     iframe.title = `Vídeo da letra ${letter} no alfabeto manual em Libras`;
     placeholder.hidden = true;
     placeholder.style.display = 'none';
