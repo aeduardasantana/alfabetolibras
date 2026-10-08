@@ -122,7 +122,14 @@ document.addEventListener('DOMContentLoaded', () => {
       const button = document.createElement('button');
       button.type = 'button';
       button.className = 'practice-letter';
-      button.textContent = char;
+      const glyph = document.createElement('span');
+      glyph.className = 'manual-glyph';
+      glyph.textContent = char;
+      glyph.setAttribute('aria-hidden', 'true');
+      const label = document.createElement('span');
+      label.className = 'manual-label';
+      label.textContent = char;
+      button.append(glyph, label);
       button.setAttribute('aria-label', `Praticar letra ${char}, posição ${index + 1}`);
       button.addEventListener('click', () => selectLetter(char, { autoplay: true, scroll: true }));
       practiceOutput.appendChild(button);
