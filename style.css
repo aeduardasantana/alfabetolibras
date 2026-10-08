@@ -494,3 +494,8 @@ h2{font-family:Georgia,"Times New Roman",serif;font-weight:600;font-size:clamp(1
 @media(max-width:900px){.alphabet-grid{grid-template-columns:repeat(9,38px)}.practice-grid{grid-template-columns:1fr;gap:20px}.practice-grid>div:first-child{text-align:center}.practice-grid .lead{margin:0 auto}.practice-panel{max-width:680px;width:100%;margin:auto}}
 @media(max-width:600px){.wrap{width:min(100% - 28px,1040px)}.site-header{min-height:64px}.hero{padding:34px 0 35px}.hero h1{font-size:clamp(2.2rem,9vw,3rem)}.hero-meta{margin:16px 0}.learning-section{padding:37px 0}.alphabet-grid{grid-template-columns:repeat(6,38px);margin:20px 0}.player-card{padding:16px}.video-container{width:min(100%,310px);max-height:460px}.player-actions{grid-template-columns:repeat(3,minmax(0,1fr))}.player-actions .button{font-size:.7rem;padding:8px 4px}.practice-section,.about-section{padding:40px 0}.practice-panel{padding:16px}.practice-letter{width:56px;height:68px}.practice-letter .manual-glyph{font-size:2.35rem}}
 @media(max-width:420px){.alphabet-grid{grid-template-columns:repeat(6,38px)}.site-nav{gap:9px}.site-nav a{font-size:.7rem}.video-container{width:min(100%,290px)}}
+
+/* Player: preserve proporção real sem restringir altura independentemente. */
+.video-container{width:min(100%,320px);max-width:320px;max-height:none;aspect-ratio:9/16}
+@media(max-width:600px){.video-container{width:min(100%,290px);max-height:none}}
+@media(max-width:420px){.video-container{width:min(100%,270px)}}
